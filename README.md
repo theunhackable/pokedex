@@ -15,6 +15,7 @@ The primary function of the Pokédex is to catalog information about different P
 - Add filter by name and id.
 - Use Server Actions and debounce for search feature.
 ## Important Links
+- [Hosted on Vercel](https://srs-pokedex.vercel.app/)
 - [Figma design link](https://www.figma.com/file/BBQy1mvAcDzxNFna6vnTXY/Pok%C3%A9dex-(Community)?node-id=0%3A1&mode=dev)
 
 - [API website](https://pokeapi.co/) 
