@@ -18,7 +18,6 @@ export const NavBar = () => {
         <div>
           <Link href='/pokemons'>Pokemons </Link>
         </div>
-        <SearchBar />
         <ThemeSwitcher />
         </div>
       </nav>
