@@ -24,12 +24,12 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="flex max-md:flex-col max-md:items-center justify-center gap-5 w-full my-5 sm:my-10">
-        <div className="md:w-1/3">
-          <h2 className="text-lg mb-1 text-center sm:text-2xl font-extrabold">
+      <div className="flex max-md:flex-col max-md:items-center justify-between gap-5 w-full my-5 sm:my-10">
+        <div className="md:w-fit px-5">
+          <h2 className="text-lg mb-1 sm:text-2xl font-extrabold">
             What is Pokedex ?
           </h2>
-          <div className="flex flex-col items-center">
+          <div className="">
             <Image
               src="/pokedex-kamalesh.gif"
               alt=""
@@ -39,7 +39,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="md:w-1/2 px-5">
+        <div className="md:w-2/3 px-5">
           <p className="pt-5 pb-2">
             The Pokédex is a fictional electronic device in the Pokémon series
             of video games, anime, and other media created by Nintendo, Game
@@ -49,7 +49,7 @@ export default function Home() {
 
           <p className="pb-2">
             The primary function of the Pokédex is to catalog information about
-            different Pokémon species. This includes details such as a Pokémon's
+            different Pokémon species. This includes details such as a Pokémon&apos;s
             name, height, weight, type, and a brief description of its
             characteristics.
           </p>
@@ -57,11 +57,11 @@ export default function Home() {
       </div>
       <div className="px-5">
         <h2 className="text-lg mb-1 sm:text-2xl font-extrabold">
-          Important Links
+          Links
         </h2>
         <ul>
           <li>
-            <Link
+           Project:  <Link
               target="__blank"
               className="text-primary-red font-semibold underline"
               href="https://github.com/theunhackable/pokedex"
@@ -77,6 +77,16 @@ export default function Home() {
               href="https://srirangasai.dev"
             >
               Sri Ranga Sai
+            </Link>
+          </li>
+          <li>
+            Special thanks for the team behind this API:{" "}
+            <Link
+              target="__blank"
+              className="text-primary-red font-semibold underline"
+              href="https://pokeapi.co/"
+            >
+              pokeapi
             </Link>
           </li>
         </ul>
