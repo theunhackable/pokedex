@@ -37,7 +37,10 @@ const Pokemons = ({ pokemons }: { pokemons: any[] }) => {
 
   return (
     <>
+    <div className="ml-5">
+
       <SearchBar setSearch={setSearch} />
+    </div>
       <div className=" my-10 flex gap-1 sm:gap-5 items-center justify-center flex-wrap">
         {displayPokemons.length ? (
           displayPokemons?.map((pokemon: any) => (

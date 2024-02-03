@@ -4,13 +4,23 @@ import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { redirect } from "next/navigation";
 
 interface TypesColors {
   [key: string]: string[];
 }
 
+export function generateStaticParams() {
+  const ids = []
+  for(let i = 1; i <=649; ++ i){
+    ids.push({id: i.toString()})
+  }
+  return ids
+}
+
 const PokemonDetailsPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params ?? 1;
+  if(Number(id) > 649) redirect('/pokemons/649')
   const typesColors: TypesColors = {
     bug: ["bg-bug", "bg-bug/50", "bg-bug/20"],
     dark: ["bg-dark", "bg-dark/50", "bg-dark/20"],
@@ -61,6 +71,8 @@ const PokemonDetailsPage = async ({ params }: { params: { id: string } }) => {
   const baseType = types.length === 1 ? types[0].type.name: types[1].type.name  ;
   const baseColor = typesColors[baseType];
 
+  const imageUrl = (Number(id) <= 649 ? `https://raw.githubusercontent.com/PokeAPI/sprites/ffcfbee3af68e186b6dc815316d39eb420b2e5f4/sprites/pokemon/other/dream-world/${id}.svg` :`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`)
+
   return (
     <main className={`flex flex-col px-2`}>
       <div
@@ -95,7 +107,7 @@ const PokemonDetailsPage = async ({ params }: { params: { id: string } }) => {
                 alt={name}
                 width={75}
                 height={75}
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/ffcfbee3af68e186b6dc815316d39eb420b2e5f4/sprites/pokemon/other/dream-world/${id}.svg`}
+                src={imageUrl}
                 priority
               />
               {id !== "649" ? (
@@ -147,7 +159,7 @@ const PokemonDetailsPage = async ({ params }: { params: { id: string } }) => {
                 <div>
                   {abilities.map((a: any) => {
                     const ability = a.ability.name.split('-').join(' ')
-                    return (<p key={a.ability.name} className="capitalize">{ability}</p>)
+                    return (<p key={a.ability.name} className="text-sm capitalize">{ability}</p>)
                   }
                     
                   )}
